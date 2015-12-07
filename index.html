@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="style/jstree-theme/style.css"/>
+
+    <script src="bower_components/lodash/lodash.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/jstree/dist/jstree.js"></script>
+    <script src="bower_components/ng-js-tree/dist/ngJsTree.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body ng-app="app">
+<div ng-controller="Ctrl">
+    <input type="text" ng-model="search" ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 200, 'blur': 0 } }" ng-change="handleSearchChanged()">
+    <button ng-click="selected()">console.log</button>
+
+    <div js-tree="treeConfig" ng-model="tree" tree="treeInstance" tree-events="changed:handleSelectionChanged"></div>
+
+</div>
+</body>
+
+</html>
+
